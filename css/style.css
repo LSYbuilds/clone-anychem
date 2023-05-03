@@ -1,42 +1,9 @@
 @charset "utf-8";
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline-style: none;
-}
-a {
-  color: #000;
-  text-decoration: none;
-}
-
-ul li {
-  list-style: none;
-}
-
-img {
-  vertical-align: middle;
-  border: 0;
-}
-
-html {
-  font-size: 16px;
-}
-
-body {
-}
-
-/* 공통클래스 */
-
-.clearfix::after {
-  display: block;
-  position: relative;
-  content: "";
-  width: 100%;
-  clear: both;
-}
-/* //공통클래스  */
-
-/* seciton 내용구조 */
-
-/* //seciton 내용구조 */
+@import url("layout.css");
+@import url("header.css");
+@import url("visual.css");
+@import url("goods.css");
+@import url("company.css");
+@import url("news.css");
+@import url("info.css");
+@import url("footer.css");
