@@ -14,10 +14,13 @@ window.onload = function () {
   //    addEventListener 이란 모든 이벤트를 처리한다는 말
   // 화살표 함수를 사용했다.
   nav.addEventListener("mouseenter", () => {
-    header.style.height = "260px";
+    // header.style.height = "260px";
     // header.classList.add("%*@");
+    //260픽셀로 변경되는 class를 작성해둠
+    header.classList.add("header-active");
   });
   nav.addEventListener("mouseleave", () => {
-    header.style.height = "100px";
+    // header.style.height = "100px";
+    header.classList.remove("header-active");
   });
 };
