@@ -7,7 +7,7 @@
   height: 100px;
   background: #fff;
   overflow: hidden;
-  transition: height 0.5s;
+  transition: height 0.5s, padding 0.5s;
   padding: 0 100px;
   z-index: 9999;
 }
@@ -35,15 +35,18 @@
 
 .logo {
   margin-top: 35px;
+  transition: margin 0.3s;
 }
 
 .nav {
   margin-left: 240px;
   margin-right: 50px;
+  transition: margin 0.5s;
 }
 .gnb {
   display: flex;
   gap: 0 50px;
+  transition: gap 0.5s;
 }
 .gnb > li {
 }
@@ -96,4 +99,61 @@
   color: #7e7e7e;
   font-weight: 700;
   font-family: "Noto Sans KR";
+}
+/* 헤더 반응형 */
+@media screen and (max-width: 1720px) {
+  .nav {
+    margin-left: 90px;
+  }
+}
+
+@media screen and (max-width: 1560px) {
+  .header {
+    padding: 0 70px;
+  }
+  .nav {
+    margin-left: 90px;
+  }
+  .gnb {
+    gap: 0 30px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .side-wrap {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    padding: 0 40px;
+  }
+  .nav {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .gnb > li > a {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .gnb {
+    gap: 0 20px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    height: 75px;
+  }
+  .logo {
+    margin-top: 20px;
+  }
+  .nav {
+    display: none;
+  }
 }
