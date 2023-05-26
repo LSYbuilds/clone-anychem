@@ -26,7 +26,7 @@ window.addEventListener("load", function (event) {
     swVisualWrap.innerHTML = html;
 
     // 여기에 넣는 이유는 아래쪽에 스와이퍼를 넣다간 스와이퍼가 먼저 실행되어버린다
-    // 때문에 위의 html이 다 적용되고 나서 스와이퍼를 실행시켜야 하기 때문에 아래쪽에 기재한다.
+    // 때문에 위의 html이 다 적용되고 나서 스와이퍼를 실행시켜야 하기 때문에 makeVisualHtml 안에  기재한다.
     const swVisual = new Swiper(".sw-visual", {
       loop: true,
       effect: "fade",
