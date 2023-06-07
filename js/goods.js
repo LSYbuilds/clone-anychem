@@ -24,9 +24,9 @@ window.addEventListener("load", function () {
         let copyArr = [..._data.goods];
 
         // Swiper 버전에 따른 문제 발생
-        // 강제 목록 추가 제거!
+        // 강제 목록 추가 제거
         // if (copyArr.length <= SLIDECOUNT) {
-        //     copyArr = [..._data.goods, ..._data.goods];
+        //   copyArr = [..._data.goods, ..._data.goods];
         // }
 
         copyArr.forEach((item, index, arr) => {
@@ -34,8 +34,8 @@ window.addEventListener("load", function () {
           <div class="swiper-slide">
             <a href="${item.link}" class="good-link">
               <div class="good-item">
-                <div class="good-item-img">
-                  <img src="images/${item.image}" alt="${item.alt}" />
+                <div class="good-item-img" style="background-image:url(images/${item.image});">
+                  
                 </div>
                 <div class="good-item-txt">
                   <p>${item.title}</p>
@@ -56,28 +56,31 @@ window.addEventListener("load", function () {
             loop: true,
             speed: 1000,
             slidesPerView: 3,
-            spaceBetween: 20,
-            navigation: {
-                prevEl: ".sw-goods-prev",
-                nextEl: ".sw-goods-next",
-            },
+            spaceBetween: 50,
             autoplay: {
-                delay: 1000,
+                delay: 2500,
                 disableOnInteraction: false,
             },
-
+            navigation: {
+                nextEl: ".sw-goods-next",
+                prevEl: ".sw-goods-prev",
+            },
             breakpoints: {
                 480: {
                     slidesPerView: 2,
                     spaceBetween: 30,
                 },
                 768: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                     spaceBetween: 30,
                 },
                 1400: {
                     slidesPerView: 3,
-                    spaceBetween: 50,
+                    spaceBetween: 30,
+                },
+                1600: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
                 },
             },
         });
@@ -86,8 +89,6 @@ window.addEventListener("load", function () {
             // focusMenu(count);
             focusMenu(this.realIndex);
         });
-
-        focusMenu(0);
     }
 
     function focusMenu(_index) {
@@ -121,17 +122,33 @@ window.addEventListener("load", function () {
                 swGoods.slideToLoop(index);
             };
         });
+
+        focusMenu(0);
     }
 
     getData();
-    // 슬라이드 멈추기
+
+    // 슬라이드 멈추기/재생하기
     const bt = document.querySelector(".sw-goods-pause");
     const icon = bt.querySelector(".fa-pause");
+
     let swGoodsState = "play";
     bt.onclick = (event) => {
         const isPlaying = swGoodsState === "play";
         swGoods.autoplay[isPlaying ? "stop" : "start"]();
         swGoodsState = isPlaying ? "stop" : "play";
         icon.classList.toggle("fa-play");
+        // if (swGoodsState === "play") {
+        //   // 슬라이드 멈춰라
+        //   swGoods.autoplay.stop();
+        //   swGoodsState = "stop";
+        //   icon.classList.add("fa-play");
+        // } else {
+        //   // 슬라이드 재실행
+        //   swGoods.autoplay.start();
+        //   swGoodsState = "play";
+        //   icon.classList.remove("fa-play");
+        // }
     };
+    //------------- 재생 멈추기
 });
