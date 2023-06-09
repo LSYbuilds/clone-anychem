@@ -22,16 +22,41 @@ window.addEventListener("load", function () {
             <div class="swiper-slide">
                 <div class="news-box">
                         <a href="${item.link}">
-                            <span>${item.cate}</span>
+                            <span class="news-cate">${item.cate}</span>
                             <p>${item.title}</p>
-                            <span><i class="fa-regular fa-clock"></i>${item.date}</span>
+                            <span class="news-date"> <i class="fa-regular fa-clock"></i>${item.date}</span>
                         </a>
                 </div>
             </div>
             `;
             html += tag;
+            const newWrap = this.document.querySelector(".sw-news .swiper-wrapper");
+            newWrap.innerHTML = html;
+            // 스와이퍼 생성
+
+            new Swiper(".sw-news", {
+                slidesPerView: 4,
+                spaceBetween: 20,
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1200: {
+                        slidesPerView: 3,
+                        spaceBetween: 10,
+                    },
+                },
+                pagination: {
+                    el: ".sw-news-pg",
+                    clickable: true,
+                },
+                speed: 800,
+                autoplay: {
+                    delay: 2500,
+                },
+            });
         });
-        console.log(html);
+        // document.querySelector(".sw-news .swiper-wrapper").innerHTML = html;
     };
 
     getNews();

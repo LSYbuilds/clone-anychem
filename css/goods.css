@@ -30,12 +30,16 @@
     font-size: 17px;
     line-height: 1.6;
     color: #777;
-    font-family: "Noto Sans KR", sans-serif;
+    font-family: "Noto Sans KR",
+     sans-serif;
     font-weight: 400;
     margin-bottom: 80px;
 }
 
 .goods-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .goods-list li {
     position: relative;
