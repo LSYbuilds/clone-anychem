@@ -26,6 +26,7 @@
 
 <div align="center">
   - [GitHub](https://github.com/LSYbuilds/clone-anychem) <br/>
+  - [Notion](https://www.notion.so/SINGLE-PROJECT-4c42a13800c64f9a829e16a70c09727a) <br/>
 </div>
 
 <div align="center">
